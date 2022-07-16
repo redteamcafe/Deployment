@@ -24,7 +24,7 @@ echo "installed OS running is using $OSINFO"
 APT=apt-get
 PAC=pacman
 echo "Determining package manager"
-curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/edit/main/osinfo.sh | bash
+curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/osinfo.sh | bash
 
 #STEP: Update and upgrade
 curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/update.sh | bash
