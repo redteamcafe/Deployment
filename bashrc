@@ -4,9 +4,9 @@
 # It is tailered and suited for my needs and can be tweaked as needed as you like
 # I try to put as many good notes as possible but there are some parts where basic Linux knowledge is going to be implied
 
-----------------------------
+
 ########## Source ##########
-----------------------------
+
 case $- in
     *i*) ;;
       *) return;;
@@ -24,9 +24,9 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 brc='vim ~/.bashrc'
------------------------------
-########## EXPORTS ##########
------------------------------
+
+########### EXPORTS ##########
+
 
 # No duplicate lines or lines starting with space in history.
 # See bash(1) for more options
