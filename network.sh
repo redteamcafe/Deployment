@@ -1,14 +1,10 @@
 #!/bin/bash
 
-OSINFO=`curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/osinfo.sh | bash`
-APT=apt-get
-PAC=pacman
-
 if
 #apt-get
         [[ "$OSINFO" == "$APT" ]];
 then
-        FILE=/usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf
+        export FILE=/usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf
         if test -f "$FILE";
         then
             sudo mv /usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf  /usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf_orig
