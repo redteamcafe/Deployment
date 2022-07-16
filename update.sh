@@ -4,20 +4,16 @@ if
 #apt-get
         [[ "$OSINFO" == "$APT" ]];
 then
-        UPDATE="apt update";
-        UPGRADE="apt upgrade -y";
-        INSTALL="apt install -y"
+        export UPDATE="apt update";
+        export UPGRADE="apt upgrade -y";
+        export INSTALL="apt install -y"
 elif
 #pacman
         [[ "$OSINFO" == "$PAC" ]];
 then
-        UPDATE="sleep 0";
-        UPGRADE="pacman -Syu --noconfirm";
-        INSTALL="pacman -S --noconfirm";
+        export UPDATE="sleep 0";
+        export UPGRADE="pacman -Syu --noconfirm";
+        export INSTALL="pacman -S --noconfirm";
 else
         echo "No Success"
 fi
-
-export UPDATE
-export UPGRADE
-export INSTALL
