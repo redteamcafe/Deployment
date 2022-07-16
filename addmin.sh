@@ -4,3 +4,4 @@
 # This is useful for Arch Linux since the preinstalled qcow file has the default user 'arch'
 
 echo "Enter the desired username >> " NEW_UNAME
+
