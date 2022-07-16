@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Upgradng system using $OSINFO"
+
 if
 #apt-get
         [[ "$OSINFO" == "$APT" ]];
@@ -17,3 +19,5 @@ then
 else
         echo "No Success"
 fi
+
+echo "Finishing upgrade"
