@@ -11,17 +11,17 @@ if
         [[ "$OSINFO" == "$APT" ]];
 then
         echo "Upgrading using $OSINFO";
-        export UPDATE="apt update";
-        export UPGRADE="apt upgrade -y";
-        export INSTALL="apt install -y"
+        export UPDATE="sudo apt update";
+        export UPGRADE="sudo apt upgrade -y";
+        export INSTALL="sudo apt install -y"
 elif
 #pacman
         [[ "$OSINFO" == "$PAC" ]];
 then
         echo "Upgrading using $OSINFO"
         export UPDATE="sleep 0";
-        export UPGRADE="pacman -Syu --noconfirm";
-        export INSTALL="pacman -S --noconfirm";
+        export UPGRADE="sudo pacman -Syu --noconfirm";
+        export INSTALL="sudo pacman -S --noconfirm";
 else
         echo "No Success"
 fi
