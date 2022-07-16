@@ -3,6 +3,8 @@
 echo "Preparing upgrade"
 export APT=apt-get
 export PAC=pacman
+echo $APT
+echo $PAC
 
 if
 #apt-get
@@ -23,5 +25,8 @@ then
 else
         echo "No Success"
 fi
+
+$UPDATE
+$UPGRADE
 
 echo "Finishing upgrade"
