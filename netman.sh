@@ -1,5 +1,8 @@
 #!/bin/bash
 
+OSINFO=`curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/edit/main/osinfo.sh | bash`
+APT=apt-get
+PAC=pacman
 
 if
 #apt-get
