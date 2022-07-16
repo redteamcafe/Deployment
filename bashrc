@@ -7,7 +7,10 @@
 
 ########## Source ##########
 
-
+# BASHRC
+if [ -f /etc/bashrc ]; then
+	 . /etc/bashrc
+fi
 
 brc='vim ~/.bashrc'
 
