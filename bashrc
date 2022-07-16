@@ -7,21 +7,7 @@
 
 ########## Source ##########
 
-case $- in
-    *i*) ;;
-      *) return;;
-esac
 
-# BASHRC
-#if [ -f /etc/bashrc ]; then
-	 . /etc/bashrc
-#fi
-
-#ALIASES
-
-#if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-#fi
 
 brc='vim ~/.bashrc'
 
