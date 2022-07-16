@@ -7,6 +7,11 @@
 
 ########## Source ##########
 
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
 # BASHRC
 if [ -f /etc/bashrc ]; then
 	 . /etc/bashrc
