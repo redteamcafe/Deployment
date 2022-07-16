@@ -21,8 +21,6 @@ echo "installed OS running is using $OSINFO"
 
 #STEP: Package manager
 #NOTE: Determines the package manage being used based on the OS
-APT=apt-get
-PAC=pacman
 echo "Determining package manager"
 curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/osinfo.sh | bash
 
