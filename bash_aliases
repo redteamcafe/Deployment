@@ -1,8 +1,8 @@
 #!/bin/bash
 
------------------------------
+
 ########## ALIASES ##########
------------------------------
+
 # To bypass any alias and execute the command like normal, put '\' before the command
 #EXAMPLE: if you want to execute the grep command, it would be '\grep'
 
