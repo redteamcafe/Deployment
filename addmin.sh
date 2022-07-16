@@ -9,5 +9,5 @@ echo "Changing default uname $UNAME"
 read -p "Enter the desired username >> " NEW_UNAME
 
 #NOTE: This changes the name of the default "arch" user to a desired one
-sudo usermod --login $NEW_UNAME --move-home --home /home/NEW_UNAME $OLD_UNAME
+sudo usermod -l $NEW_UNAME -m -d /home/$NEW_UNAME $OLD_UNAME
 sudo groupmod -n $NEW_UNAME $OLD_UNAME
