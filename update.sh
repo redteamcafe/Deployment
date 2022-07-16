@@ -1,6 +1,8 @@
 #!/bin/bash
 
 echo "Upgradng system using $OSINFO"
+export APT=apt-get
+export PAC=pacman
 
 if
 #apt-get
