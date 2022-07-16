@@ -17,3 +17,7 @@ then
 else
         echo "No Success"
 fi
+
+export UPDATE
+export UPGRADE
+export INSTALL
