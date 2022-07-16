@@ -33,11 +33,11 @@ if
 #apt-get
         [[ "$OSINFO" == "$APT" ]];
 then
-        bash -c "$(curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/hostname.sh)"
+        echo "Debian systems not required"
 elif
         [[ "$OSINFO" == "$PAC" ]];
 then
-        echo "No, this is PACMAN!"
+        bash -c "$(curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/hostname.sh)"
 else
         sleep 0
 fi
@@ -47,7 +47,9 @@ fi
 bash -c "$(curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/network.sh)"
 
 #STEP Cockpit Web UI
-sudo $UPDATE ; sudo $INSTALL cockpit
+$UPDATE
+$INSTALL cockpit
+
 if
 #apt-get
         [[ "$OSINFO" == "$PAC" ]];
