@@ -13,15 +13,15 @@ case $- in
 esac
 
 # BASHRC
-if [ -f /etc/bashrc ]; then
+#if [ -f /etc/bashrc ]; then
 	 . /etc/bashrc
-fi
+#fi
 
 #ALIASES
 
-if [ -f ~/.bash_aliases ]; then
+#if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
-fi
+#fi
 
 brc='vim ~/.bashrc'
 
