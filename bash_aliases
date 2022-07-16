@@ -12,7 +12,7 @@ alias alicat='cat ~/.bash_aliases'
 alias alis='source ~/.bash_aliases'
 
 # LIST COMMANDS
-alias la='ls -ahl #lists all in human readable format 
+alias la='ls -ahl' #lists all in human readable format 
 alias lr='ls -lRh' #lists recursive
 alias lss='ls -ahlS' #lists all from filesize largest to smalled (invert with -r flag)
 alias lsa='ls -chlr' #lists by last time accessed
