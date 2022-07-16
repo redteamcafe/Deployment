@@ -55,6 +55,8 @@ if
         [[ "$OSINFO" == "$PAC" ]];
 then
         sudo systemctl enable --now cockpit.socket
+else
+        sleep 0
 fi
 
 #STEP Install Docker and Containers
