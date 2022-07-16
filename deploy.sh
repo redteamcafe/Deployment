@@ -55,7 +55,7 @@ then
 fi
 
 #STEP Install Docker and Containers
-
+curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/docker%20.sh | bash
 
 
 
