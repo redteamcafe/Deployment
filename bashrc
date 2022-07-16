@@ -52,9 +52,7 @@ export VISUAL='vim'
 alias svim='sudo vim'
 
 # Show auto-completion list automatically (without hiutting tab twice)
-if [[ $iatest > 0 ]];
-then bind "set show-all-if-ambiguous On";
-fi
+if [[ $iatest > 0 ]]; then bind "set show-all-if-ambiguous On"; fi
 
 # Give list and grep commands color output automatically
 alias ls='ls --color=auto'
