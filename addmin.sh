@@ -7,7 +7,7 @@ UNAME=`whoami`
 echo "2"
 OLD_UNAME=$UNAME
 echo "3"
-read -p "Enter the desired username >> " NEW_UNAME
+echo "Enter the desired username >> "
 echo "4"
 echo "Changing default uname $UNAME"
 echo "5"
