@@ -3,8 +3,6 @@
 echo "Preparing upgrade"
 export APT=apt-get
 export PAC=pacman
-echo $APT
-echo $PAC
 
 if
 #apt-get
