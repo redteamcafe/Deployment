@@ -16,10 +16,10 @@
 echo "Determining operating system"
 #NOTE: This is for archiving purposes
 ##export OSINFO="$PWD/osinfo.sh"
-export OSINFO=bash -c "$(curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/osinfo.sh)"
+export OSINFO=`curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/osinfo.sh | bash`
 echo "installed OS running is using $OSINFO"
 
 #STEP: Package manager
 #NOTE: Determines the package manage being used based on the OS
 echo "Determining package manager"
-bash -c "$(curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/osinfo.sh)"
+echo "Package manager is $OSINFO"
