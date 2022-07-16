@@ -28,28 +28,3 @@ echo "Package manager is $OSINFO"
 bash -c "$(curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/update.sh)"
 
 #STEP Uname and hostname change (for Arch Linux)
-
-if
-#apt-get
-        [[ "$OSINFO" == "$APT" ]];
-then
-        bash -c "$(curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/hostname.sh)"
-else
-        sleep 0
-fi
-
-#STEP Network Manager
-#NOTE: This step sets NetworkManager daemon as the primary network manager and removes systemd-networkd if it is installed
-bash -c "$(curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/network.sh)"
-
-#STEP Cockpit Web UI
-sudo $UPDATE ; sudo $INSTALL cockpit
-if
-#apt-get
-        [[ "$OSINFO" == "$PAC" ]];
-then
-        sudo systemctl enable --now cockpit.socket
-fi
-
-#STEP Install Docker and Containers
-bash -c "$(curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/deploy.sh)"
