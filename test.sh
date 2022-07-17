@@ -27,6 +27,8 @@ echo "Package manager is $OSINFO"
 #STEP: Update and upgrade
 bash -c "$(curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/update.sh)"
 
+echo "NEXT"
+
 #STEP Uname and hostname change (for Arch Linux)
 
 if
@@ -41,3 +43,5 @@ then
 else
         sleep 0
 fi
+
+echo "Finished hostname configuration"
