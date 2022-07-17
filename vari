@@ -1,0 +1,28 @@
+#!/bin/bash
+
+#NOTE: Config file for variables used in script
+
+OSINFO=`./osinfo.sh`
+APT="apt-get"
+PAC="pacman"
+
+
+if
+#apt-get
+  [[ "$OSINFO" == "$APT" ]];
+then
+  echo "Upgrading using $OSINFO";
+  UPDATE="sudo apt update";
+  UPGRADE="sudo apt upgrade -y";
+  INSTALL="sudo apt install -y"
+elif
+#pacman
+  [[ "$OSINFO" == "$PAC" ]];
+then
+  echo "Upgrading using $OSINFO"
+  UPDATE="sleep 0";
+  UPGRADE="sudo pacman -Syu --noconfirm";
+  INSTALL="sudo pacman -S --noconfirm";
+else
+  echo "No Success"
+fi
