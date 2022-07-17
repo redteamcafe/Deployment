@@ -1,23 +1,26 @@
 #!/bin/bash
 
+source vari
+
 if
-#apt-get
         [[ "$OSINFO" == "$APT" ]];
 then
-        export FILE=/usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf
+        FILE=/usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf
         if test -f "$FILE";
         then
-            sudo mv /usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf  /usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf_orig
+                sudo mv /usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf /usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf_orig
         else
-            echo "$FILE does not exist"
+                echo "$FILE does not exist"
+                echo "Skipping..."
         fi
         sudo touch /usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf
         FILE=/etc/NetworkManager/NetworkManager.conf
         if test -f "$FILE";
         then
-            sudo sed -i 's/managed\=false/managed\=true/g' /etc/NetworkManager/NetworkManager.conf
+                sudo sed -i 's/managed\=false/managed\=true/g' /etc/NetworkManager/NetworkManager.conf
         else
-            echo "$FILE does not exist"
+                echo "$FILE does not exist"
+                echo "Skipping..."
         fi
         sudo systemctl restart NetworkManager
         sudo apt update && sudo apt install ifupdown
