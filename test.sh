@@ -28,6 +28,8 @@ echo "Package manager is $OSINFO"
 bash -c "$(curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/update.sh)"
 
 echo "NEXT"
+echo $APT
+echo $PAC
 
 #STEP Uname and hostname change (for Arch Linux)
 
@@ -37,6 +39,7 @@ if
 then
         echo "Debian systems not required"
 elif
+#pacman
         [[ "$OSINFO" == "$PAC" ]];
 then
         bash -c "$(curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/hostname.sh)"
