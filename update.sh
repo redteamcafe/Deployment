@@ -28,3 +28,5 @@ $UPDATE
 $UPGRADE
 
 echo "Finishing upgrade"
+
+exit 0
