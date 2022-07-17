@@ -27,6 +27,10 @@ echo "Package manager is $OSINFO"
 #STEP: Update and upgrade
 bash -c "$(curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/update.sh)"
 
+echo "NEXT"
+echo $APT
+echo $PAC
+
 #STEP Uname and hostname change (for Arch Linux)
 
 if
@@ -35,12 +39,16 @@ if
 then
         echo "Debian systems not required"
 elif
+#pacman
         [[ "$OSINFO" == "$PAC" ]];
 then
         bash -c "$(curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/hostname.sh)"
 else
         sleep 0
 fi
+
+echo "Finished hostname configuration"
+
 
 #STEP Network Manager
 #NOTE: This step sets NetworkManager daemon as the primary network manager and removes systemd-networkd if it is installed
