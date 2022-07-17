@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source vari
+
 # This will help automate some of the deployment of severs
 # Currently supports Debian and Arch Linux
 
@@ -10,66 +12,43 @@
 ##export SCRIPTPATH=$(dirname "$SCRIPTDIR")
 ##export PWD=$(echo $SCRIPTPATH)
 
-#STEP: Detect OS
-#NOTE: Used to determine which OS is running.
+#STEP: System Update
+echo "STEP: System Update"
+#NOTE: Updates the system first
 #NOTE: Currently it only has Debian and Arch Linux. In the future I may add more
-echo "Determining operating system"
-#NOTE: This is for archiving purposes
-##export OSINFO="$PWD/osinfo.sh"
-export OSINFO=`curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/osinfo.sh | bash`
-echo "installed OS running is using $OSINFO"
-
-#STEP: Package manager
-#NOTE: Determines the package manage being used based on the OS
-echo "Determining package manager"
-echo "Package manager is $OSINFO"
-
-#STEP: Update and upgrade
-bash -c "$(curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/update.sh)"
-
-echo "NEXT"
-echo $APT
-echo $PAC
-
-#STEP Uname and hostname change (for Arch Linux)
-
-if
-#apt-get
-        [[ "$OSINFO" == "$APT" ]];
-then
-        echo "Debian systems not required"
-elif
-#pacman
-        [[ "$OSINFO" == "$PAC" ]];
-then
-        bash -c "$(curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/hostname.sh)"
-else
-        sleep 0
-fi
-
-echo "Finished hostname configuration"
-
-
-#STEP Network Manager
-#NOTE: This step sets NetworkManager daemon as the primary network manager and removes systemd-networkd if it is installed
-bash -c "$(curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/network.sh)"
-
-#STEP Cockpit Web UI
+echo "Update and install packages with package manager: $OSINFO"
 $UPDATE
-$INSTALL cockpit
+$UPGRADE
 
+#STEP: Proxmox Steps
+#NOTE: This makes some important changes to Proxmox installations
+./proxmox.sh
+
+#STEP: Rename username and change hostname (for Arch Linux)
+echo "STEP: Rename username and change hostname (for Arch Linux)"
+#NOTE: Since are Linux qcow comes preinstalled, a lot of changes need to be made
+echo "Checking system..."
 if
-#apt-get
-        [[ "$OSINFO" == "$PAC" ]];
+  [[ "$OSINFO" == "$PAC" ]];
 then
-        sudo systemctl enable --now cockpit.socket
+  ./charch.sh
 else
-        sleep 0
+  sleep 0
 fi
 
-#STEP Install Docker and Containers
-bash -c "$(curl -fsSL raw.githubusercontent.com/bobafett2010/Deployment/main/deploy.sh)"
+#STEP Network Manager Configuration
+echo "STEP Network Manager Configuration"
+#NOTE: This step sets NetworkManager daemon as the primary network manager and removes systemd-networkd if it is installed
+./network.sh
 
+#STEP: Install Cockpit Web UI
+echo "STEP: Install Cockpit Web UI"
+#NOTE: This step installs the Cockpit Web UI for headless and remote servers
+./cockpit
 
+#STEP: Install Docker and Containers
+echo "STEP: Install Docker and Containers"
+#NOTE: This sets up Docker Engine for managing and deploying containers as well as some useful containers
+./docker.sh
 
 
