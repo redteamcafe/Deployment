@@ -5,13 +5,6 @@ source vari
 # This will help automate some of the deployment of severs
 # Currently supports Debian and Arch Linux
 
-#STEP: Check mount location
-#NOTE: This was originally used when I would mount directory where the script lied on the server directly
-#NOTE: This is being kept for preservation purposes
-##export SCRIPTDIR=$(readlink -f "$0")
-##export SCRIPTPATH=$(dirname "$SCRIPTDIR")
-##export PWD=$(echo $SCRIPTPATH)
-
 #STEP: System Update
 echo "STEP: System Update"
 #NOTE: Updates the system first
@@ -19,6 +12,11 @@ echo "STEP: System Update"
 echo "Update and install packages with package manager: $OSINFO"
 $UPDATE
 $UPGRADE
+
+#STEP: Setup bashrc, profile, and bash_aliases
+echo "Setup bashrc, profile, and bash_aliases"
+#NOTE: Customer Bashrc and Aliases files
+./bashrc.sh
 
 #STEP: Proxmox Steps
 #NOTE: This makes some important changes to Proxmox installations
