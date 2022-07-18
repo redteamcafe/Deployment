@@ -5,23 +5,10 @@ source vari
 if
         [[ "$OSINFO" == "$APT" ]];
 then
-        FILE=/usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf
-        if test -f "$FILE";
-        then
-                sudo mv /usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf /usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf_orig
-        else
-                echo "$FILE does not exist"
-                echo "Skipping..."
-        fi
+        sudo mv /usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf /usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf_orig
         sudo touch /usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf
-        FILE=/etc/NetworkManager/NetworkManager.conf
-        if test -f "$FILE";
-        then
-                sudo sed -i 's/managed\=false/managed\=true/g' /etc/NetworkManager/NetworkManager.conf
-        else
-                echo "$FILE does not exist"
-                echo "Skipping..."
-        fi
+        sudo sed -i 's/managed\=false/managed\=true/g' /etc/NetworkManager/NetworkManager.conf
+        sudo rm -r /etc/netplan/*
         sudo systemctl restart NetworkManager
         sudo apt update && sudo apt install ifupdown
         sudo apt --purge remove nplan netplan.io -y
