@@ -16,4 +16,5 @@ cd Deployment
 ./deploy.sh
 
 #Cleanup
-rm -r Deployment 
+cd ..
+sudo rm -r Deployment 
