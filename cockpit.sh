@@ -9,13 +9,9 @@ while true; do
   read -p "Do you want to install the Cockpit Web UI? >> " YN
   case ${YN:0:1} in
     [Yy]* )
-      if 
         $UPDATE;
         $INSTALL cockpit;
         echo "Cockpit installation complete";
-      else
-        echo "Exiting setup...";
-      fi
       break;;
     [Nn]* )
       break;;
