@@ -12,7 +12,8 @@ git clone https://github.com/bobafett2010/Deployment.git
 chmod +x Deployment/*.sh
 
 #Start deployment
-./Deployment/deploy.sh
+cd Deployment
+./deploy.sh
 
 #Cleanup
 rm -r Deployment 
