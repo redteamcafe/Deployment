@@ -5,7 +5,7 @@ source vari
 echo "Preparing to install Docker Engine"
 
 while true; do
-  read -p "Do you want to install Docker Engine on this system?" YN
+  read -p "Do you want to install Docker Engine on this system? y/n >> " YN
   case ${YN:0:1} in
     [Yy]* )
       if
