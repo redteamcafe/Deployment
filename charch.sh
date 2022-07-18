@@ -4,7 +4,7 @@ source vari
 
 echo "Making changes to Arch Linux server"
 while true; do
-        read -p "Would you like to change the hostname for this server? (y=yes n=no) >> " YN
+        read -p "Would you like to change the hostname for this server? y/n >> " YN
         case ${YN:0:1} in
                 [Yy]* )
                         read -p "What would you like to rename the host to? >> " HOST;
