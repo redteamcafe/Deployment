@@ -42,7 +42,7 @@ echo "STEP Network Manager Configuration"
 #STEP: Install Cockpit Web UI
 echo "STEP: Install Cockpit Web UI"
 #NOTE: This step installs the Cockpit Web UI for headless and remote servers
-./cockpit
+./cockpit.sh
 
 #STEP: Install Docker and Containers
 echo "STEP: Install Docker and Containers"
