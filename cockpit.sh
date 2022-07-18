@@ -6,7 +6,7 @@ source vari
 
 $INSTALL cockpit
 while true; do
-  read -p "Do you want to install the Cockpit Web UI? >> " YN
+  read -p "Do you want to install the Cockpit Web UI? y/n >> " YN
   case ${YN:0:1} in
     [Yy]* )
         $UPDATE;
