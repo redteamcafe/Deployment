@@ -22,6 +22,16 @@ echo "Setup bashrc, profile, and bash_aliases"
 #NOTE: This makes some important changes to Proxmox installations
 ./proxmox.sh
 
+#STEP: Install Cockpit Web UI
+echo "STEP: Install Cockpit Web UI"
+#NOTE: This step installs the Cockpit Web UI for headless and remote servers
+./cockpit.sh
+
+#STEP: Install Docker and Containers
+echo "STEP: Install Docker and Containers"
+#NOTE: This sets up Docker Engine for managing and deploying containers as well as some useful containers
+./docker.sh
+
 #STEP: Rename username and change hostname (for Arch Linux)
 echo "STEP: Rename username and change hostname (for Arch Linux)"
 #NOTE: Since are Linux qcow comes preinstalled, a lot of changes need to be made
@@ -39,14 +49,6 @@ echo "STEP Network Manager Configuration"
 #NOTE: This step sets NetworkManager daemon as the primary network manager and removes systemd-networkd if it is installed
 ./network.sh
 
-#STEP: Install Cockpit Web UI
-echo "STEP: Install Cockpit Web UI"
-#NOTE: This step installs the Cockpit Web UI for headless and remote servers
-./cockpit.sh
 
-#STEP: Install Docker and Containers
-echo "STEP: Install Docker and Containers"
-#NOTE: This sets up Docker Engine for managing and deploying containers as well as some useful containers
-./docker.sh
 
 
