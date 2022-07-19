@@ -7,26 +7,26 @@
 
 USER=`whoami`
 
-FILE=/home/$USER/.bashrc
-echo "now checking for bashrc"
-#NOTE: checks for the existence of the .bashrc file
-if [ -f "$FILE" ];
-then
-  echo "bashrc exists already";
-  FILE2=bashrc
-  #File comparision
-  if cmp -s "$FILE" "$FILE2";
-  then
-    echo "bashrc files are the same";
-  else
-    echo "copying files now"
-    cat bashrc > /home/$USER/.bashrc;
-  fi
-else
-  echo "bashrc does not exist";
-  echo "moving bashrc now";
-  cat bashrc > /home/$USER/.bashrc;
-fi
+#FILE=/home/$USER/.bashrc
+#echo "now checking for bashrc"
+##NOTE: checks for the existence of the .bashrc file
+#if [ -f "$FILE" ];
+#then
+#  echo "bashrc exists already";
+#  FILE2=bashrc
+#  #File comparision
+#  if cmp -s "$FILE" "$FILE2";
+#  then
+#    echo "bashrc files are the same";
+#  else
+#    echo "copying files now"
+#    cat bashrc > /home/$USER/.bashrc;
+#  fi
+#else
+#  echo "bashrc does not exist";
+#  echo "moving bashrc now";
+#  cat bashrc > /home/$USER/.bashrc;
+#fi
 
 FILE=/home/$USER/.bash_aliases
 echo "now checking for bash_aliases"
@@ -48,19 +48,19 @@ else
   cat bash_aliases > /home/$USER/.bash_aliases;
 fi
 
-##check to see if .profile exists
-FILE=/home/ctos/.profile
-echo "now checking for profile"
-##checks for the existence of the FILE variable
-if [ -f "$FILE" ];
-then
-  echo "profile already exists";
-else
-  echo "creating profile";
-  cat profile > /home/$USER/.profile
-  touch /home/$USER/.profile;
-  echo "done";
-fi
+###check to see if .profile exists
+#FILE=/home/ctos/.profile
+#echo "now checking for profile"
+###checks for the existence of the FILE variable
+#if [ -f "$FILE" ];
+#then
+#  echo "profile already exists";
+#else
+#  echo "creating profile";
+#  cat profile > /home/$USER/.profile
+#  touch /home/$USER/.profile;
+#  echo "done";
+#fi
 
 
 
