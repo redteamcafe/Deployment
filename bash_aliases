@@ -50,6 +50,12 @@ alias homerun='cd ~/ && cat /etc/motd'
 # SCREEN
 alias scrn='screen -d -R $USER -c ~/screen'
 
-
+# SYSTEMCTL
+alias statusy='read -p "Name? >> " SYSCTL && sudo systemctl status $SYSCTL'
+alias starty='read -p "Name? >> " SYSCTL && sudo systemctl start $SYSCTL'
+alias stopy='read -p "Name? >> " SYSCTL && sudo systemctl stop $SYSCTL'
+alias restarty='read -p "Name? >> " SYSCTL && sudo systemctl restart $SYSCTL'
+alias enabley='read -p "Name? >> " SYSCTL && sudo systemctl enable $SYSCTL'
+alias disabley='read -p "Name? >> " SYSCTL && sudo systemctl disable $SYSCTL'
 
 
