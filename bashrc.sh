@@ -20,12 +20,12 @@ then
     echo "bashrc files are the same";
   else
     echo "copying files now"
-    cp bashrc > /home/$USER/.bashrc;
+    cat bashrc > /home/$USER/.bashrc;
   fi
 else
   echo "bashrc does not exist";
   echo "moving bashrc now";
-  cp bashrc > /home/$USER/.bashrc;
+  cat bashrc > /home/$USER/.bashrc;
 fi
 
 FILE=/home/$USER/.bash_aliases
@@ -40,12 +40,12 @@ then
     echo "bash_aliases files are the same";
   else
     echo "copying files now"
-    cp bash_aliases > /home/$USER/.bash_aliases;
+    cat bash_aliases > /home/$USER/.bash_aliases;
   fi
 else
   echo "bash_aliases does not exist";
   echo "moving bash_aliases now";
-  cp bash_aliases > /home/$USER/.bash_aliases;
+  cat bash_aliases > /home/$USER/.bash_aliases;
 fi
 
 ##check to see if .profile exists
@@ -57,7 +57,7 @@ then
   echo "profile already exists";
 else
   echo "creating profile";
-  cp profile > /home/$USER/.profile
+  cat profile > /home/$USER/.profile
   touch /home/$USER/.profile;
   echo "done";
 fi
