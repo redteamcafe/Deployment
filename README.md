@@ -4,7 +4,7 @@ This is a script I run to setup virtual machines in my home environment. I wrote
 
 You can run the script by downloading the git repository locally with git
 
-`git clone https://github.com/bobafett2010/Deployment.git`
+`git clone https://github.com/caburmij/Deployment.git`
 
 Then you need to change all of the shell files to be executable
 
@@ -16,4 +16,4 @@ Then run the deployment script
 
 or you can use bash to automatically complete these steps
 
-`bash -c "$(curl -fsSL https://raw.githubusercontent.com/bobafett2010/Deployment/main/download.sh)"`
+`bash -c "$(curl -fsSL https://raw.githubusercontent.com/caburmij/Deployment/main/download.sh)"`
