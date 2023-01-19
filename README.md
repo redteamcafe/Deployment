@@ -16,4 +16,4 @@ Then run the deployment script
 
 or you can use bash to automatically complete these steps
 
-`bash -c "$(curl -fsSL https://raw.githubusercontent.com/bobafett2010/Deployment/main/download.sh)"`
+`bash -c "$(curl -fsSL https://raw.githubusercontent.com/redteamcafe/Deployment/main/download.sh)"`
