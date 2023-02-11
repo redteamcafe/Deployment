@@ -4,7 +4,7 @@ This is a script I run to setup virtual machines in my home environment. I wrote
 
 You can run the script by downloading the git repository locally with git
 
-`git clone https://github.com/bobafett2010/Deployment.git`
+`git clone https://github.com/redteamcafe/Deployment.git`
 
 Then you need to change all of the shell files to be executable
 
